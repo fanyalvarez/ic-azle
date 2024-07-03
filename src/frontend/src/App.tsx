@@ -13,7 +13,7 @@ function App() {
 
   // Clear the principal when the identity is cleared
   useEffect(() => {
-    if (!identity) setPrincipal(undefined);
+    if (!identity) setPrincipal('be2us-64aaa-aaaaa-qaabq-cai');
   }, [identity]);
 
   // Get the principal from the backend when an identity is available
@@ -25,25 +25,18 @@ function App() {
 
   return (
     <div className="flex flex-col items-center w-full gap-5 p-10 font-sans text-2xl italic md:items-start md:gap-10 md:text-6xl">
-      <img
+      {/* <img
         src="/ic.svg"
         alt="Internet Computer"
         className="w-40 mb-5 md:mb-0 md:w-96"
-      />
+      /> */}
       <div className="text-center">
         {identity ? "You are logged in." : "You are not logged in."}
       </div>
       <LoginButton />
       <Principal principal={principal} />
       <Counter />
-      <div className="text-center">
-        <a
-          href="https://github.com/kristoferlund/ic-use-internet-identity-demo"
-          className="underline"
-        >
-          Fork this demo.
-        </a>
-      </div>
+
     </div>
   );
 }
